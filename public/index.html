@@ -6,7 +6,48 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>Meme library</h1>
+        <div class="wrapper">
+            <header class="header">
+                <div class="header_img_block">
+                    <img src="" alt="" class="header_img" />
+                </div>
+                <div class="header_options_block">
+                    <div class="header_option">Головна</div>
+                    <div class="header_option">Конструктор</div>
+                </div>
+                <div class="header_random_mem_block">
+                    <button class="header_random_mem_button">
+                        <img src="" alt="" class="header_random_mem_img" />
+                        <span class="header_random_mem_text"
+                            >Рандомний мем</span
+                        >
+                    </button>
+                </div>
+            </header>
+
+            <main class="main">
+                <div class="main_title">
+                    <div class="main_title_text_block">
+                        <h1 class="main_title_text_bigText">
+                            Бібліотека мемів
+                        </h1>
+                        <p class="main_title_text_smallText">
+                            твоя щодена доза сміху
+                        </p>
+                    </div>
+                </div>
+
+                <div class="main_content">
+                    <div class="main_content_head">
+                        <span class="main_content_head">свіжі меми</span>
+                        <button class="update_memes">
+                            оновити <span><img src="" alt="" /></span>
+                        </button>
+                    </div>
+                    <div class="main_content_block"></div>
+                </div>
+            </main>
+        </div>
     </body>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
