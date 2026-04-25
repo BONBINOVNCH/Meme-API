@@ -106,9 +106,9 @@ body {
     margin-bottom: 20px;
 }
 
-.main_content_head span {
+/* .main_content_head span {
     font-size: 20px;
-}
+} */
 
 .update_memes {
     background: #ffd166;
@@ -129,6 +129,7 @@ body {
     border-radius: 18px;
     color: white;
     background-color: #222;
+    font-size: 20px;
 }
 
 .main_content_block {
@@ -199,6 +200,10 @@ body {
 @media (max-width: 768px) {
     .main_title_text_bigText {
         font-size: 40px;
+    }
+    .main_content_head_title {
+        display: block;
+        font-size: 15px;
     }
     .header_img {
         max-height: 60px;
