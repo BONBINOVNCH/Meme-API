@@ -1,4 +1,4 @@
-function convertImg(file, maxHeight = 100, maxWidth = 100, quality = 0.7) {
+function convertImg(file, maxHeight = 180, maxWidth = 180, quality = 0.9) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
