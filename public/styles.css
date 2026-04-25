@@ -22,7 +22,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .header_img {
@@ -30,14 +30,27 @@ body {
 }
 
 .header_option {
-    margin: 0 10px;
+    margin: 10px 5px;
     cursor: pointer;
     font-weight: 500;
     transition: 0.2s;
+    padding: 8px;
+}
+
+.header_option.active {
+    background-color: #ffd166;
+    background: #ffd166;
+    border: none;
+    padding: 10px 8px;
+    border-radius: 10px;
 }
 
 .header_option:hover {
     transform: scale(1.1);
+}
+
+.header_option.active:hover {
+    transform: none;
 }
 
 .header_options_block {
@@ -111,6 +124,13 @@ body {
     transform: scale(1.1);
 }
 
+.main_content_head_title {
+    padding: 12px;
+    border-radius: 18px;
+    color: white;
+    background-color: #222;
+}
+
 .main_content_block {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -118,39 +138,62 @@ body {
 }
 
 .meme_card {
-    background: #eee;
-    border-radius: 15px;
+    background: #ffffff;
+    border-radius: 18px;
     overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    transition: 0.2s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.25s;
+    display: flex;
+    flex-direction: column;
 }
 
 .meme_card:hover {
-    transform: scale(1.05) rotate(-1deg);
+    transform: translateY(-5px) rotate(-1deg);
 }
 
-.meme_card img {
+.meme_image_wrapper {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 180px;
+    overflow: hidden;
+    background: #eee;
 }
 
-.meme_text {
-    position: absolute;
-    left: 10px;
-    right: 10px;
-    color: white;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px black;
+.meme_image_wrapper img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
 }
 
-.meme_text.top {
-    top: 10px;
+.meme_content {
+    padding: 12px;
 }
 
-.meme_text.bottom {
-    bottom: 10px;
+.meme_title {
+    font-family: "Fredoka", sans-serif;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.meme_response {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.meme_footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.meme_category {
+    background: #ffd166;
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+
+.meme_likes {
+    color: #ff4d6d;
 }
 
 @media (max-width: 768px) {
@@ -158,7 +201,7 @@ body {
         font-size: 40px;
     }
     .header_img {
-        max-height: 70px;
+        max-height: 60px;
     }
     .header {
         flex-wrap: wrap;

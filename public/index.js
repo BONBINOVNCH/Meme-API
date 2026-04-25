@@ -13,8 +13,27 @@ async function getData() {
     console.log(memes);
     console.log(templates);
     for (const meme of memes) {
+        const template = templates.find(
+            (template) => template.name == meme.title,
+        );
+        console.log(template);
+
         memes_block.innerHTML += `
-        <div>${meme.title}</div>
+             <div class="meme_card">
+        <div class="meme_image_wrapper">
+            <img src="${template.imageBase64}" alt="${meme.title}" />
+        </div>
+
+        <div class="meme_content">
+            <h3 class="meme_title">${meme.title}</h3>
+            <p class="meme_response">${meme.response}</p>
+
+            <div class="meme_footer">
+                <span class="meme_category">${meme.category}</span>
+                <span class="meme_likes">❤️ ${meme.likes}</span>
+            </div>
+        </div>
+    </div>
     `;
     }
 }
