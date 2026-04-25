@@ -48,30 +48,30 @@ const memeImages = {
     "Student mode": "https://i.imgflip.com/2fm6x.jpg",
 };
 
-input_file.addEventListener("change", async (e) => {
-    const currFiles = e.target.files;
+// input_file.addEventListener("change", async (e) => {
+//     const currFiles = e.target.files;
 
-    if (currFiles.length > 0) {
-        let src = URL.createObjectURL(currFiles[0]);
-        const base64Img = await convertImg(currFiles[0]);
-        console.log(base64Img);
+//     if (currFiles.length > 0) {
+//         let src = URL.createObjectURL(currFiles[0]);
+//         const base64Img = await convertImg(currFiles[0]);
+//         console.log(base64Img);
 
-        const template = {
-            name: "Student mode",
-            imageBase64: base64Img,
-            mimeType: "image/png",
-            width: 180,
-            height: 180,
-        };
+//         const template = {
+//             name: "Student mode",
+//             imageBase64: base64Img,
+//             mimeType: "image/png",
+//             width: 180,
+//             height: 180,
+//         };
 
-        try {
-            const response = await axios.post("/api/templates", template);
-            console.log(response);
-        } catch (e) {
-            console.log(e);
-        }
-    }
-});
+//         try {
+//             const response = await axios.post("/api/templates", template);
+//             console.log(response);
+//         } catch (e) {
+//             console.log(e);
+//         }
+//     }
+// });
 
 update_memes.addEventListener("click", () => {
     memes_block.innerHTML = ``;
