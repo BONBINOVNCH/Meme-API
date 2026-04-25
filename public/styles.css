@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: "Comic Neue", sans-serif;
+    font-family: "Bangers", cursive;
     background: #f5efe6;
     color: #222;
 }
@@ -25,8 +25,11 @@ body {
     margin-bottom: 30px;
 }
 
+.header_img {
+    max-height: 100px;
+}
+
 .header_option {
-    font-family: "Fredoka", sans-serif;
     margin: 0 10px;
     cursor: pointer;
     font-weight: 500;
@@ -50,8 +53,8 @@ body {
     padding: 10px 16px;
     border-radius: 20px;
     cursor: pointer;
-    font-family: "Fredoka", sans-serif;
     transition: 0.2s;
+    font-family: "Bangers", cursive;
 }
 
 .header_random_mem_button:hover {
@@ -91,7 +94,6 @@ body {
 }
 
 .main_content_head span {
-    font-family: "Fredoka", sans-serif;
     font-size: 20px;
 }
 
@@ -101,7 +103,7 @@ body {
     padding: 8px 14px;
     border-radius: 15px;
     cursor: pointer;
-    font-family: "Fredoka", sans-serif;
+    font-family: "Bangers", cursive;
     transition: 0.2s;
 }
 
@@ -141,7 +143,6 @@ body {
     color: white;
     font-weight: bold;
     text-shadow: 2px 2px 4px black;
-    font-family: Impact, sans-serif;
 }
 
 .meme_text.top {
@@ -155,5 +156,24 @@ body {
 @media (max-width: 768px) {
     .main_title_text_bigText {
         font-size: 40px;
+    }
+    .header_img {
+        max-height: 70px;
+    }
+    .header {
+        flex-wrap: wrap;
+    }
+    .header_option {
+        font-size: small;
+    }
+    .header_random_mem_block {
+        width: 100%;
+    }
+    .header_random_mem_button {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        font-size: larger;
     }
 }
