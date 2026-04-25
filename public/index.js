@@ -2,6 +2,7 @@ import convertImg from "./utils/convert.js";
 
 const memes_block = document.querySelector(".main_content_block");
 const input_file = document.querySelector(".file");
+const update_memes = document.querySelector(".update_memes");
 
 async function getData() {
     const data = await axios("/api/memes");
@@ -70,4 +71,9 @@ input_file.addEventListener("change", async (e) => {
             console.log(e);
         }
     }
+});
+
+update_memes.addEventListener("click", () => {
+    memes_block.innerHTML = ``;
+    getData();
 });
