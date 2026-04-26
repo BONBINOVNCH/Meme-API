@@ -1,4 +1,4 @@
-import convertImg from "./utils/convert.js";
+import convertImg from "../utils/convert.js";
 
 const memes_block = document.querySelector(".main_content_block");
 const input_file = document.querySelector(".file");
