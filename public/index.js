@@ -41,12 +41,12 @@ async function getData() {
 
 getData();
 
-const memeImages = {
-    "This is fine": "https://i.imgflip.com/26am.jpg",
-    "Works on my machine": "https://i.imgflip.com/1w7ygt.jpg",
-    "Friday deploy": "https://i.imgflip.com/30b1gx.jpg",
-    "Student mode": "https://i.imgflip.com/2fm6x.jpg",
-};
+// const memeImages = {
+//     "This is fine": "https://i.imgflip.com/26am.jpg",
+//     "Works on my machine": "https://i.imgflip.com/1w7ygt.jpg",
+//     "Friday deploy": "https://i.imgflip.com/30b1gx.jpg",
+//     "Student mode": "https://i.imgflip.com/2fm6x.jpg",
+// };
 
 // input_file.addEventListener("change", async (e) => {
 //     const currFiles = e.target.files;
