@@ -6,15 +6,11 @@ const meme_title = document.querySelector(".meme_title");
 const meme_response = document.querySelector(".meme_response");
 const meme_category = document.querySelector(".meme_category");
 
-async function getData() {
+async function getData(choice = "first") {
     choose_template_line.innerHTML = ``;
     const data_templates = await axios("/api/templates");
-    console.log(data_templates);
     const templates = data_templates.data;
-    console.log(templates);
     for (const template of templates) {
-        console.log(template);
-
         choose_template_line.innerHTML += `
              <div class="template_item">
         <div class="template_image_wrapper">
@@ -23,6 +19,18 @@ async function getData() {
     </div>
     `;
     }
+
+    const items = document.querySelectorAll(
+        ".choose_template_line .template_item",
+    );
+    console.log(items);
+    if (choice === "first") {
+        items[0].classList.add("active");
+    } else {
+        items[items.length - 1].classList.add("active");
+    }
+    const item_img = document.querySelector(".active img");
+    card_img.src = item_img.src;
 }
 
 getData();
@@ -37,7 +45,6 @@ document.addEventListener("click", (e) => {
 
     item.classList.add("active");
     const item_img = document.querySelector(".active img");
-    console.log(item_img);
     card_img.src = item_img.src;
 });
 
@@ -109,7 +116,7 @@ btn_download.addEventListener("click", async (e) => {
                 console.log(e);
             }
 
-            getData();
+            getData("last");
         }
     }
 });
