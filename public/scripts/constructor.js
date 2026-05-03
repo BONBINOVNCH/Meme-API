@@ -38,6 +38,24 @@ async function getData(choice = "first") {
     card_img.src = item_img.src;
 }
 
+function showToast(message, type = "success") {
+    const container = document.querySelector(".toast_container");
+
+    const toast = document.createElement("div");
+    toast.classList.add("toast", type);
+    toast.textContent = message;
+
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.animation = "slideOut 0.4s forwards";
+
+        setTimeout(() => {
+            toast.remove();
+        }, 400);
+    }, 2500);
+}
+
 getData();
 
 document.addEventListener("click", (e) => {
@@ -119,8 +137,11 @@ btn_download.addEventListener("click", async (e) => {
             try {
                 const response = await axios.post("/api/templates", template);
                 console.log(response);
+
+                showToast("Шаблон успішно завантажено 🔥", "success");
             } catch (e) {
                 console.log(e);
+                showToast("Помилка при завантажені шаблона 😢", "error");
             }
 
             getData("last");
@@ -139,7 +160,11 @@ post_btn.addEventListener("click", async () => {
     try {
         const response = await axios.post("/api/memes", meme);
         console.log(response);
+
+        showToast("Мем успішно запощено 🔥", "success");
     } catch (e) {
         console.log(e);
+
+        showToast("Помилка при пості 😢", "error");
     }
 });
