@@ -1,26 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/styles.css">
-     <link rel="stylesheet" href="./styles/constructor.css">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="./styles/styles.css" />
+        <link rel="stylesheet" href="./styles/constructor.css" />
+
+        <title>Document</title>
+    </head>
+
     <body>
         <div class="wrapper">
+            <!-- HEADER -->
             <header class="header">
                 <div class="header_img_block">
                     <img src="./imgs/memz.png" alt="" class="header_img" />
                 </div>
+
                 <div class="header_options_block">
                     <a
-                            style="text-decoration: none; color: black"
-                            href="index.html"
-                            ><div class="header_option ">Головна</div></a
-                        >
+                        href="index.html"
+                        style="text-decoration: none; color: black"
+                    >
+                        <div class="header_option">Головна</div>
+                    </a>
                     <div class="header_option active">Конструктор</div>
                 </div>
+
                 <div class="header_random_mem_block">
                     <button class="header_random_mem_button">
                         <span class="header_random_mem_text"
@@ -30,7 +37,9 @@
                 </div>
             </header>
 
+            <!-- MAIN -->
             <main class="main">
+                <!-- TITLE -->
                 <div class="main_title">
                     <div class="main_title_text_block">
                         <h1 class="main_title_text_bigText">
@@ -42,49 +51,130 @@
                     </div>
                 </div>
 
+                <!-- CONTENT -->
                 <div class="main_content">
                     <div class="main_construktor_block">
+                        <!-- TEMPLATE SECTION -->
                         <div class="construktor_choose_template">
-                            <h4 class="choose_template_title">1. Обери шаблон</h4>
+                            <h4 class="choose_template_title">
+                                1. Обери шаблон
+                            </h4>
+
                             <div class="choose_template_line_block">
                                 <div class="choose_template_line"></div>
                             </div>
-                            <h4 class="choose_template_title">Або обери власний!</h4>
-                            <div class="choose_template_user_block">
-                                <div class="choose_template_user_name_block">
-                                     <h4 class="choose_template_user_name_title">Введи назву шаблону</h4>
-                                     <input placeholder="Введи назву шалону" type="text" class="choose_template_user_name_input">
-                                     <button class="btn_download">Завантаж шаблон!</button>
-                                </div>
-                                <div class="choose_template_user_input_block">
-                                     <h4 class="choose_template_user_input_title">Завантаж картинку шаблону</h4>
-                                     <input class="file" type="file" name="" id="" />
-                                </div>
-                                
 
+                            <div class="main_construktor_block_twoSides">
+                                <!-- LEFT SIDE -->
+                                <div class="main_construktor_block_left">
+                                    <h4 class="choose_template_title">
+                                        Або обери власний!
+                                    </h4>
 
+                                    <div class="choose_template_user_block">
+                                        <div
+                                            class="choose_template_user_name_block"
+                                        >
+                                            <h4
+                                                class="choose_template_user_name_title"
+                                            >
+                                                Введи назву шаблону
+                                            </h4>
+
+                                            <input
+                                                type="text"
+                                                class="choose_template_user_name_input"
+                                                placeholder="Введи назву шалону"
+                                            />
+
+                                            <button class="btn_download">
+                                                Завантаж шаблон!
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            class="choose_template_user_input_block"
+                                        >
+                                            <h4
+                                                class="choose_template_user_input_title"
+                                            >
+                                                Завантаж картинку шаблону
+                                            </h4>
+
+                                            <input type="file" class="file" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- TEXT -->
+                                <div class="construktor_choose_text">
+                                    <h4 class="choose_template_title">
+                                        2. Введи текст ситуації
+                                    </h4>
+
+                                    <div class="choose_template_text_block">
+                                        <input
+                                            type="text"
+                                            class="choose_template_text_input"
+                                            placeholder="Введи ситуацію"
+                                        />
+                                    </div>
+                                </div>
+
+                                <!-- CATEGORY -->
+                                <div class="construktor_choose_category">
+                                    <h4 class="choose_template_title">
+                                        3. Введи категорію мема
+                                    </h4>
+
+                                    <div class="choose_template_category_block">
+                                        <input
+                                            type="text"
+                                            class="choose_template_category_input"
+                                            placeholder="Введи категорію"
+                                        />
+                                    </div>
+                                </div>
+
+                                <!-- RIGHT SIDE -->
+                                <div class="main_construktor_block_right">
+                                    <div class="meme_card">
+                                        <div class="meme_image_wrapper">
+                                            <img
+                                                src="${template.imageBase64}"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div class="meme_content">
+                                            <h3 class="meme_title">
+                                                Титул шаблону
+                                            </h3>
+                                            <p class="meme_response">
+                                                Твоя смішна ситуація
+                                            </p>
+
+                                            <div class="meme_footer">
+                                                <span class="meme_category"
+                                                    >general</span
+                                                >
+                                                <span class="meme_likes"
+                                                    >❤️ 0</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <!-- twoSides -->
                         </div>
-
-                        <div class="construktor_choose_text">
-                            <h4 class="choose_template_title">2. Введи текст ситуації</h4>
-                            <div class="choose_template_text_block">
-                                <input placeholder="Введи ситуацію" type="text" class="choose_template_text_input">
-                        </div>
-                        </div>
-
-                        <div class="construktor_choose_category">
-                            <h4 class="choose_template_title">3. Введи категорію мема</h4>
-                            <div class="choose_template_category_block">
-                                <input placeholder="Введи категорію" type="text" class="choose_template_category_input">
-                        </div>
-                        </div>
+                        <!-- template section -->
                     </div>
                 </div>
-
             </main>
 
-             <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
             <script type="module" src="./scripts/constructor.js"></script>
+        </div>
     </body>
 </html>

@@ -1,3 +1,7 @@
+.main_construktor_block_twoSides {
+    display: flex;
+}
+
 .choose_template_line_block {
     overflow-x: auto;
     overflow-y: hidden;

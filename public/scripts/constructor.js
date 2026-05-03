@@ -1,6 +1,10 @@
 import convertImg from "../utils/convert.js";
 
 const choose_template_line = document.querySelector(".choose_template_line");
+const card_img = document.querySelector(".meme_image_wrapper > img");
+const meme_title = document.querySelector(".meme_title");
+const meme_response = document.querySelector(".meme_response");
+const meme_category = document.querySelector(".meme_category");
 
 async function getData() {
     choose_template_line.innerHTML = ``;
@@ -32,6 +36,9 @@ document.addEventListener("click", (e) => {
         .forEach((el) => el.classList.remove("active"));
 
     item.classList.add("active");
+    const item_img = document.querySelector(".active img");
+    console.log(item_img);
+    card_img.src = item_img.src;
 });
 
 let template = {
@@ -45,6 +52,33 @@ let template = {
 const template_name = document.querySelector(
     ".choose_template_user_name_input",
 );
+
+const template_text = document.querySelector(".choose_template_text_input");
+const template_category = document.querySelector(
+    ".choose_template_category_input",
+);
+
+template_name.addEventListener("input", (e) => {
+    meme_title.textContent = e.target.value;
+    if (!e.target.value) {
+        meme_title.textContent = "Титул шаблону";
+    }
+});
+
+template_text.addEventListener("input", (e) => {
+    meme_response.textContent = e.target.value;
+    if (!e.target.value) {
+        meme_response.textContent = "Твоя ситуація";
+    }
+});
+
+template_category.addEventListener("input", (e) => {
+    meme_category.textContent = e.target.value;
+    if (!e.target.value) {
+        meme_category.textContent = "general";
+    }
+});
+
 const input_file = document.querySelector(".file");
 const btn_download = document.querySelector(".btn_download");
 
