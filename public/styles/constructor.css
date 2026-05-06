@@ -65,7 +65,7 @@
 
 .choose_template_line_block {
     overflow-x: auto;
-    padding-bottom: 10px;
+    padding: 10px;
     margin: 10px 0;
 }
 
