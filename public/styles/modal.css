@@ -1,0 +1,275 @@
+/* ================= MODAL ================= */
+
+.modal {
+    display: none;
+}
+
+.modal.active {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+
+    z-index: 1000;
+
+    animation: fadeIn 0.35s ease;
+}
+
+.modal_container {
+    position: relative;
+
+    padding: 20px;
+
+    border-radius: 28px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.08),
+        rgba(255, 255, 255, 0.02)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 15px rgba(255, 255, 255, 0.05);
+
+    animation: modalPop 0.4s ease;
+}
+
+/* ================= CLOSE BUTTON ================= */
+
+.modal_cross {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 34px;
+    height: 34px;
+
+    padding: 7px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.modal_cross:hover {
+    transform: rotate(90deg) scale(1.08);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ================= CARD ================= */
+
+.flip-card {
+    background-color: transparent;
+
+    width: 230px;
+    height: 360px;
+
+    perspective: 1200px;
+
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+
+    transform-style: preserve-3d;
+}
+
+.flip-card.active .flip-card-inner {
+    transform: rotateY(180deg);
+    cursor: auto;
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 24px;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* FRONT */
+
+.flip-card-front {
+    background: linear-gradient(145deg, #ffffff, #eaeaea);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-front img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+}
+
+/* BACK */
+
+.flip-card-back {
+    transform: rotateY(180deg);
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+    /* gap: 12px; */
+}
+
+.flip-card-back .meme_card {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* .flip-card-back h1 {
+    font-size: 28px;
+    font-weight: 700;
+
+    margin: 0;
+} */
+
+/* .flip-card-back p {
+    margin: 0;
+
+    font-size: 15px;
+
+    opacity: 0.9;
+} */
+
+.modal_header {
+    position: absolute;
+    top: 30px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: max-content;
+    max-width: 90%;
+
+    padding: 10px 20px;
+
+    border-radius: 18px;
+
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    color: rgb(0, 0, 0);
+
+    background: linear-gradient(135deg, #ffd166, #ffe19a);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35),
+        inset 0 0 10px rgba(255, 255, 255, 0.05);
+
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+
+    animation:
+        headerAppear 0.7s ease,
+        glow 2.5s infinite alternate;
+}
+
+.modal_header.animate {
+    animation:
+        textPop 0.5s ease,
+        glow 2.5s infinite alternate;
+}
+
+@keyframes headerAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes textPop {
+    0% {
+        transform: translateX(-50%) scale(0.7);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateX(-50%) scale(1.08);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow:
+            0 0 15px rgba(255, 255, 255, 0.15),
+            0 0 30px rgba(79, 172, 254, 0.15);
+    }
+
+    to {
+        box-shadow:
+            0 0 20px rgba(255, 255, 255, 0.25),
+            0 0 45px rgba(79, 172, 254, 0.35);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalPop {
+    from {
+        transform: scale(0.8) translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
