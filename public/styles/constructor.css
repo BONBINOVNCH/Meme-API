@@ -1,14 +1,5 @@
-.main_construktor_block_twoSides {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-@media (max-width: 900px) {
-    .main_construktor_block_twoSides {
-        grid-template-columns: 1fr;
-    }
+* {
+    box-sizing: border-box;
 }
 
 .main_construktor_block_left {
@@ -122,6 +113,7 @@
     flex-direction: column;
     gap: 15px;
     align-items: center;
+    width: 100%;
 }
 
 .meme_card {
@@ -241,6 +233,18 @@
     background: linear-gradient(135deg, #ff4d6d, #ff758f);
 }
 
+.main_construktor_block_twoSides {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.main_construktor_block_left,
+.main_construktor_block_right {
+    min-width: 0;
+}
+
 @keyframes slideIn {
     to {
         transform: translateX(0);
@@ -252,5 +256,14 @@
     to {
         transform: translateX(120%);
         opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main_title_text_bigText {
+        font-size: 30px;
+    }
+    .main_construktor_block_twoSides {
+        grid-template-columns: 1fr;
     }
 }
